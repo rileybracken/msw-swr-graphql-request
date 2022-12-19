@@ -1,6 +1,10 @@
-module.exports = {
+const nextJest = require('next/jest');
+
+const createJestConfig = nextJest({ dir: './' });
+
+const config = {
   preset: 'ts-jest',
-  testEnvironment: 'jsdom',
+  testEnvironment: 'jest-environment-jsdom',
   globals: {
     'ts-jest': {
       tsconfig: './tsconfig.jest.json',
@@ -16,3 +20,5 @@ module.exports = {
     },
   },
 };
+
+module.exports = createJestConfig(config);

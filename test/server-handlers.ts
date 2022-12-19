@@ -1,6 +1,9 @@
 import { graphql } from 'msw';
 
-const gql = graphql.link('https://rickandmortyapi.com/graphql');
+import { baseUrl } from '../utils/request';
+import { isSSR } from '../utils/isSSR';
+
+const gql = graphql.link(isSSR ? `${baseUrl}/api/graphql` : '/api/graphql');
 
 const handlers = [
   gql.query('Characters', (req, res, ctx) => {
