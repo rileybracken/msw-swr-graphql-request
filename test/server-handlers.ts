@@ -1,8 +1,10 @@
 import { graphql } from 'msw';
+import getConfig from 'next/config';
 
-import { baseUrl } from '../utils/request';
 import { isSSR } from '../utils/isSSR';
 
+const { publicRuntimeConfig } = getConfig();
+const baseUrl = publicRuntimeConfig.baseUrl;
 const gql = graphql.link(isSSR ? `${baseUrl}/api/graphql` : '/api/graphql');
 
 const handlers = [
