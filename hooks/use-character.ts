@@ -15,16 +15,16 @@ const QUERY = gql`
 `;
 
 const fetcher = async (query: string) => {
-  const { characters } = await request({
+  const { characters, errors } = await request({
     url: '/api/graphql',
     document: query,
   });
+
   return characters;
 };
 
 export const useCharacter = () => {
   return useSWR(QUERY, fetcher, {
     revalidateOnFocus: false,
-    onErrorRetry: (error) => console.log(error),
   });
 };
