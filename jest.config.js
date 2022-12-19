@@ -4,6 +4,7 @@ const createJestConfig = nextJest({ dir: './' });
 
 const config = {
   preset: 'ts-jest',
+  resetMocks: true,
   testEnvironment: 'jest-environment-jsdom',
   globals: {
     'ts-jest': {
