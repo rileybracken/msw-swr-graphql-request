@@ -14,13 +14,14 @@ const QUERY = gql`
 
 const fetcher = async (query: string) => {
   const { characters } = await request(
+    // '/api/graphql',
     'https://rickandmortyapi.com/graphql',
     query,
   );
   return characters;
 };
 
-export const useCustomer = () => {
+export const useCharacter = () => {
   return useSWR(QUERY, fetcher, {
     revalidateOnFocus: false,
   });

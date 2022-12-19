@@ -6,7 +6,7 @@ module.exports = {
       tsconfig: './tsconfig.jest.json',
     },
   },
-  setupFilesAfterEnv: ['./jest.setup.ts'],
+  setupFilesAfterEnv: ['./jest.setup.ts', './test/setup-env.ts'],
   coverageThreshold: {
     global: {
       branches: 20,

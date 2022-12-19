@@ -1,9 +1,9 @@
-import { useCustomer } from '../../hooks/use-customer';
+import { useCharacter } from '../../hooks/use-character';
 
 import Customer from '../Customer';
 
 const Home = () => {
-  const { mutate, isLoading } = useCustomer();
+  const { mutate, isLoading } = useCharacter();
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -13,7 +13,7 @@ const Home = () => {
     <div>
       <button onClick={() => mutate()}>Load</button>
 
-      <div style={{ display: 'flex', flexDirection: 'row' }}>
+      <div>
         <Customer />
       </div>
     </div>

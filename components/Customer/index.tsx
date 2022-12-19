@@ -1,7 +1,7 @@
-import { useCustomer } from '../../hooks/use-customer';
+import { useCharacter } from '../../hooks/use-character';
 
 const Customer = () => {
-  const { data } = useCustomer();
+  const { data } = useCharacter();
 
   return (
     <ul>
